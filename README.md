@@ -1,7 +1,5 @@
 # baselibrary/java [![Docker Repository on Quay.io](https://quay.io/repository/baselibrary/java/status "Docker Repository on Quay.io")](https://quay.io/repository/baselibrary/java)
 
-[![](http://dockeri.co/image/baselibrary/java)](https://registry.hub.docker.com/u/baselibrary/java/)
-
 ## Installation and Usage
 
     docker pull quay.io/baselibrary/java:${VERSION:-latest}
