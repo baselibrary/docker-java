@@ -1,4 +1,4 @@
-FROM baselibrary/ubuntu:14.04
+FROM quay.io/baselibrary/ubuntu:14.04
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Add repository
