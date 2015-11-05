@@ -11,12 +11,12 @@ versions=( "${versions[@]%/}" )
 
 
 for version in "${versions[@]}"; do	
-  fullVersion="$(curl -fsSL "http://ppa.launchpad.net/webupd8team/java/ubuntu/dists/trusty/main/binary-amd64/Packages.gz" | gunzip | awk -F ': ' '$1 == "Package" { pkg = $2 } pkg == "oracle-java"'"$version"'"-installer" && $1 == "Version" { print $2 }' )"
+  fullVersion="$(curl -fsSL "http://ppa.launchpad.net/webupd8team/java/ubuntu/dists/trusty/main/binary-amd64/Packages.gz" | gunzip | awk -v pkgname="oracle-java$version-installer" -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' )"
 	(
 		set -x
 		sed '
-			s/%%JAVA_MAJOR%%/'"$version"'/g;
-			s/%%JAVA_VERSION%%/'"$fullVersion"'/g;
+			s/%%MAJOR%%/'"$version"'/g;
+			s/%%VERSION%%/'"$fullVersion"'/g;
 		' Dockerfile.template > "$version/Dockerfile"
 	)
 done

@@ -1,9 +1,9 @@
-FROM baselibrary/ubuntu:14.04
+FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV JAVA_MAJOR 6
-ENV JAVA_VERSION 6u45-0~webupd8~8
+ENV MAJOR 6
+ENV VERSION 6u45-0~webupd8~8
 
 ## Repository
 RUN \
@@ -15,9 +15,9 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y oracle-java$JAVA_MAJOR-installer=$JAVA_VERSION &&\
+  apt-get install -y oracle-java$MAJOR-installer=$VERSION &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Environments
-ENV JAVA_HOME /usr/lib/jvm/java-$JAVA_MAJOR-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-$MAJOR-oracle
 

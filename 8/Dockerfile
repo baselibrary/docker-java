@@ -1,9 +1,9 @@
-FROM baselibrary/ubuntu:14.04
+FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV JAVA_MAJOR 8
-ENV JAVA_VERSION 8u66+8u65arm-1~webupd8~1
+ENV MAJOR 8
+ENV VERSION 8u66+8u65arm-1~webupd8~1
 
 ## Repository
 RUN \
@@ -15,9 +15,9 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y oracle-java$JAVA_MAJOR-installer=$JAVA_VERSION &&\
+  apt-get install -y oracle-java$MAJOR-installer=$VERSION &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Environments
-ENV JAVA_HOME /usr/lib/jvm/java-$JAVA_MAJOR-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-$MAJOR-oracle
 
