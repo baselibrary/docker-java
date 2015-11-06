@@ -2,8 +2,8 @@ FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV MAJOR 7
-ENV VERSION 7u80+7u60arm-0~webupd8~1
+ENV JAVA_MAJOR   7
+ENV JAVA_VERSION 7u80+7u60arm-0~webupd8~1
 
 ## Repository
 RUN \
@@ -15,9 +15,9 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y oracle-java$MAJOR-installer=$VERSION &&\
+  apt-get install -y oracle-java7-installer=$JAVA_VERSION &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Environments
-ENV JAVA_HOME /usr/lib/jvm/java-$MAJOR-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 

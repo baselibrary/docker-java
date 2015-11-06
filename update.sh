@@ -15,8 +15,8 @@ for version in "${versions[@]}"; do
 	(
 		set -x
 		sed '
-			s/%%MAJOR%%/'"$version"'/g;
-			s/%%VERSION%%/'"$fullVersion"'/g;
+			s/%%JAVA_MAJOR%%/'"$version"'/g;
+			s/%%JAVA_VERSION%%/'"$fullVersion"'/g;
 		' Dockerfile.template > "$version/Dockerfile"
 	)
 done

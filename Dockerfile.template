@@ -2,8 +2,8 @@ FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV MAJOR %%MAJOR%%
-ENV VERSION %%VERSION%%
+ENV JAVA_MAJOR   %%JAVA_MAJOR%%
+ENV JAVA_VERSION %%JAVA_VERSION%%
 
 ## Repository
 RUN \
@@ -15,9 +15,9 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y oracle-java$MAJOR-installer=$VERSION &&\
+  apt-get install -y oracle-java%%JAVA_MAJOR%%-installer=$JAVA_VERSION &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Environments
-ENV JAVA_HOME /usr/lib/jvm/java-$MAJOR-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-%%JAVA_MAJOR%%-oracle
 
