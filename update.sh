@@ -12,7 +12,7 @@ versions=( "${versions[@]%/}" )
 
 for version in "${versions[@]}"; do
 	repoPackage="http://ppa.launchpad.net/webupd8team/java/ubuntu/dists/trusty/main/binary-amd64/Packages.gz"
-  fullVersion="$(curl -fsSL "${repoPackage}" | gunzip | awk -v pkgname="oracle-java${version}-installer" -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
+  fullVersion="$(curl -fsSL "${repoPackage}" | gunzip | awk -v pkgname="oracle-java${version}-installer" -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | grep "^$version" | sort -rV | head -n1 )"
 	(
 		set -x
 		sed '
