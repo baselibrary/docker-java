@@ -16,3 +16,10 @@
 ### Usage
 
     docker run -it --rm baselibrary/java
+    
+
+    `
+    FROM baselibrary/java:8
+
+    ...
+    `
