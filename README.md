@@ -19,7 +19,7 @@
     
 
     `
-    FROM baselibrary/java:8
+    FROM baselibrary/java:8 
 
     ...
     `
