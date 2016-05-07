@@ -1,6 +1,6 @@
 NAME     = baselibrary/java
 REPO     = git@github.com:baselibrary/docker-java.git
-REGISTRY = thoughtworks.ga
+REGISTRY = thoughtworks.io
 VERSIONS = $(foreach df,$(wildcard */Dockerfile),$(df:%/Dockerfile=%))
 
 all: build 
