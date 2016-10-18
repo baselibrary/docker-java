@@ -3,7 +3,7 @@ MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
 ENV JAVA_MAJOR   8
-ENV JAVA_VERSION 8u101+8u101arm-1~webupd8~2
+ENV JAVA_VERSION 8b108~trusty~NoobsLab.com
 
 ## Repository
 RUN \
